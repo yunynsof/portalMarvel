@@ -7,4 +7,4 @@ Pasos para su instalacion
 2. Abrir ventana de comando, con CLI Angular.
 3. Posicionarse en el directorio local en donde se aloja el repositorio descargado.
 4. Ejecutar npm install.
-5. Apicar ng serve --o.
+5. Aplicar ng serve --o.
