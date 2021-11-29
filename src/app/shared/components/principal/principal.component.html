@@ -1,0 +1,114 @@
+<nav class="main-navbar">
+	<div class="nav-wrapper brand-blue">
+		<div class="brand-logo">
+			<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Marvel_Logo.svg/800px-Marvel_Logo.svg.png" class="logo">
+			</div>
+		</div>
+	</nav>
+
+	<body class="horizontal-layout horizontal-menu 2-columns  " data-open="hover" data-menu="horizontal-menu"
+     data-color="bg-gradient-x-purple-blue" data-col="2-columns">
+		<!-- BEGIN: Content-->
+		<form >
+			<div class="app-content content">
+				<div class="content-wrapper">
+					<div class="content-body">
+						<div  class="card">
+							<div class="card-header">
+								<h2>¿Conoces al universo Marvel?</h2>
+							</div>
+							<div class="card-text">
+								<ul>
+									<li>Un nuevo universo se presenta.</li>
+									<li>Cada personaje es único y capaz de golpearte hasta que desees no haberlos hecho enfadar.</li>
+									<li>Observalos e identifica a quién mas te asemejas, y recuerda la realidad supera la ficción.</li>
+									<br>
+								 <div class="row" >
+								    <div class="col-8 col-md-4">
+								       <div class="input-group mb-3" >
+                                         <input type="text" class="form-control" placeholder="Busqueda de heroes" 
+										 (keyup.enter)="searchSuperHero()" (keyup)="searchSuperHero()" aria-label="Recipient's username" 
+										  aria-describedby="button-addon2" [(ngModel)]="nameHero" name="nameHero">
+                                         <div class="input-group-append">
+                                           <button class="btn btn-danger" (click)="searchSuperHero()" type="button" title="Buscar">
+										      <i class="ft-search"></i>
+										   </button>
+                                         </div>
+                                       </div>
+							        </div>
+								    <div class="col-2 col-md-4">
+                                      <div class="input-group-append">
+                                        <button class="btn btn-primary" (click)="goEdit()" type="button" title="Editar">
+										   <i class="ft-edit"></i>
+										</button>
+                                      </div>
+							        </div>
+							     </div>
+								</ul>
+							</div>
+						</div>
+
+						<section id="columns">
+						<div  infinite-scroll *ngIf="scrollWindow" [scrollWindow]=true (scrolled)="onScrollDown($event)" (scrolledUp)="onScrollUp($event)">
+							<div class="row">
+								<div class="col-md-12 mt-1">
+									<div class="card-columns">
+										<div class="content" fxLayout="row wrap" fxLayoutGap="16px grid">
+											<div fxFlex="33%" fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let item of marvelArray">
+												<div class="card">
+													<div class="card-content">
+														<img class="card-img-top img-fluid" src="{{item.thumbnail.path}}.{{item.thumbnail.extension}}" alt="Card image cap">
+															<div class="card-body">               
+																<h4 class="card-title" style="color:#b60f2d;"><b>{{item.name}}</b></h4>
+																<p class="card-text">{{item.description}}</p>
+																<h5>{{item.modified}}</h5>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									 </div>
+								   </div>
+								</div>
+								<div  infinite-scroll *ngIf="!scrollWindow" [scrollWindow]=false (scrolled)="onScrollDown($event)" (scrolledUp)="onScrollUp($event)">
+							<div class="row">
+								<div class="col-md-12 mt-1">
+									<div class="card-columns">
+										<div class="content" fxLayout="row wrap" fxLayoutGap="16px grid">
+											<div fxFlex="33%" fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let item of marvelArray">
+												<div class="card">
+													<div class="card-content">
+														<img class="card-img-top img-fluid" src="{{item.thumbnail.path}}.{{item.thumbnail.extension}}" alt="Card image cap">
+															<div class="card-body">               
+																<h4 class="card-title" style="color:#b60f2d;"><b>{{item.name}}</b></h4>
+																<p class="card-text">{{item.description}}</p>
+																<h5>{{item.modified}}</h5>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									 </div>
+								   </div>
+								</div>
+							</section>
+
+						</div>
+					</div>
+				</div>
+			</form>
+			<!-- END: Content-->
+
+			<!-- BEGIN: Footer-->
+			<footer class="footer footer-static footer-light navbar-shadow">
+				<div class="clearfix blue-grey lighten-2 text-sm-center mb-0 px-2">
+				 <span class="float-md-center d-block d-md-inline-block">2021 &copy; Copyright 
+				  <a class="text-bold-800 grey darken-2" href="https://github.com/yunynsof" target="_blank">yunynsof</a>
+				 </span>
+				</div>
+			</footer>
+			<!-- END: Footer-->
+
+		</body>

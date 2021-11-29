@@ -1,0 +1,53 @@
+nav {
+  color: #fff;
+  background-color: #518cca;
+  width: 100%;
+  height: 64px;
+  line-height: 64px;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+}
+
+nav .nav-wrapper {
+  position: relative;
+  height: 100%;
+}
+
+.brand-blue {
+  background-color: #518cca;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+}
+
+nav .brand-logo {
+  left: 50px;
+  transform: initial;
+}
+
+ nav .brand-logo {
+  margin-left: 4.6rem;
+ }
+
+.logo {
+  width: 12.4rem;
+  height: 4.1rem;
+}
+
+.search-results-container{
+    margin: 40px;
+    height: 350px;
+    width: 500px;
+    overflow: auto;
+}
+
+footer {
+        text-align: center;
+        width: 100%;
+        bottom: 0;
+        position:fixed;
+    }
+
+
+
+
+
+
+

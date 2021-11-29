@@ -1,0 +1,95 @@
+<nav class="main-navbar">
+	<div class="nav-wrapper brand-blue">
+		<div class="brand-logo">
+			<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Marvel_Logo.svg/800px-Marvel_Logo.svg.png" class="logo" 
+			(click)="goPrincipal()" title="Inicio">
+			</div>
+		</div>
+	</nav>
+
+	<body class="horizontal-layout horizontal-menu 2-columns  " data-open="hover" data-menu="horizontal-menu"
+     data-color="bg-gradient-x-purple-blue" data-col="2-columns">
+		<!-- BEGIN: Content-->
+		<form >
+			<div class="app-content content">
+				<div class="content-wrapper">
+					<div class="content-body">
+						<div id="what-is" class="card">
+							<div class="card-header">
+								<h2>En este apartado puedes editar a tus heroes favoritos</h2>
+							</div>
+							<div class="card-text">
+								<ul>
+									<li>Puedes editar tanto nombre como la descripción de tu heroe.</li>
+									<li>Luego si deseas visualizar tu edicion selecciona el boton visualizador.</li>
+									<li>Puedes volver al buscador dando clic en nuestro emblema MARVEL.</li>
+									<br>
+								 <div class="row" >
+								    <div class="col-8 col-md-2">
+								    
+                                         <div class="input-group-append" >
+                                           <button class="btn btn-outline-success btn-block"type="button" type="button"(click)="goView()" title="Visualizador" *ngIf="disabledEdit">
+										      <i class="ft-eye"></i>
+										   </button>
+                                         </div>
+                                    
+							        </div>
+								    <div class="col-2 col-md-1">
+                                      <div class="input-group-append">
+                                        <button class="btn btn-primary" type="button" type="button"(click)="goEdit()" title="Editar" *ngIf="!disabledEdit">
+										   <i class="ft-edit"></i>
+										</button>
+                                      </div>
+							        </div>
+							     </div>
+								</ul>
+							</div>
+						</div>
+
+						<section id="columns">
+						<div  infinite-scroll [scrollWindow]=true (scrolled)="onScrollDown($event)" (scrolledUp)="onScrollUp($event)">
+							<div class="row">
+								<div class="col-md-12 mt-1">
+									<div class="card-columns">
+										<div class="content" fxLayout="row wrap" fxLayoutGap="16px grid">
+											<div fxFlex="33%" fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let item of marvelArray;let index = index">
+												<div class="card">
+													<div class="card-content">
+														<img class="card-img-top img-fluid" src="{{item.thumbnail.path}}.{{item.thumbnail.extension}}" alt="Card image cap">
+															<div class="card-body">               
+																<h4 class="card-title" style="color:#b60f2d;"><b><input class="form-control" style="color:#b60f2d;" 
+																    [(ngModel)]="marvelArray[index].name" name=a{{index}} *ngIf="disabledEdit"></b></h4>
+																<textarea class="form-control rounded-0" rows="3" [(ngModel)]="marvelArray[index].description" name=b{{index}}
+																      *ngIf="disabledEdit"></textarea>
+																  
+																<h4 class="card-title" style="color:#b60f2d;" *ngIf="!disabledEdit"><b>{{item.name}}</b></h4>
+																<p class="card-text" *ngIf="!disabledEdit">{{item.description}}</p>
+																<h5>{{item.modified}}</h5>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									 </div>
+								</div>
+							</div>
+						</section>
+
+						</div>
+					</div>
+				</div>
+			</form>
+			<!-- END: Content-->
+
+			<!-- BEGIN: Footer-->
+			<footer class="footer footer-static footer-light navbar-shadow">
+				<div class="clearfix blue-grey lighten-2 text-sm-center mb-0 px-2">
+				 <span class="float-md-center d-block d-md-inline-block">2021 &copy; Copyright 
+				  <a class="text-bold-800 grey darken-2" href="https://github.com/yunynsof" target="_blank">yunynsof</a>
+				 </span>
+				</div>
+			</footer>
+			<!-- END: Footer-->
+
+		</body>
